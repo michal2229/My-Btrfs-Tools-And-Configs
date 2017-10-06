@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ## Script to make batch of snapshots from given subvolumes.
 # It expects You to provide MNTDIR - a dir which contain mounted subvolumes,
