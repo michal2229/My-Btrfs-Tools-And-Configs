@@ -1,6 +1,4 @@
 #!/bin/bash
 
-MNTDEVICE="/dev/mapper/ubu-root"
-MNTPOINT="/btrfs-root"
-
+source _settings.sh
 sudo mount $MNTDEVICE $MNTPOINT -o subvolid=0

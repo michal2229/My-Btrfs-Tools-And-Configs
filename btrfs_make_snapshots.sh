@@ -10,13 +10,10 @@ set -e
 # Snapshots are placed in subfolders, which name has '_' instead of '@' (i.e. _mountpoint).
 # Snapshots are named as follows: name;date;comment, for example: @mountpoint;2017-05-04_12-34;This_is_comment
 
-MNTPOINT="/btrfs-root"
-MNTDIR="$MNTPOINT/mountpoints"
-SNAPDIR="$MNTPOINT/snapshots"
-
 DATE=$(date "+%y-%m-%d_%H-%M")
 COMMENT="$(echo $@ | sed 's/ /_/g')"
 
+source _settings.sh
 mount_btrfs_root.sh || true
 
 for i in $(ls $MNTDIR); do
